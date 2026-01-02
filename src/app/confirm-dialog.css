@@ -56,7 +56,7 @@
 @media (max-width: 768px) {
 
   .dialog-container {
-    width: 92vw;
+    /* width: 92vw; */
     max-width: 420px;
     min-width: unset;
     padding: 20px;
