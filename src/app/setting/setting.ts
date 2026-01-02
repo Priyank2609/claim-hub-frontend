@@ -35,7 +35,7 @@ export class Setting {
           duration: 3000,
           horizontalPosition: "right",
           verticalPosition: 'top',
-          panelClass: 'snacbar-success'
+          panelClass: 'snackbar-success'
         })
         this.router.navigate(['/'])
 
