@@ -43,7 +43,7 @@
       <span class="label">Status</span>
       <span class="status" [ngClass]="{
           submitted: (claimById|async)?.status?.toLowerCase().trim() === 'submitted',
-          pending: (claimById|async)?.status?.toLowerCase().trim() === 'pending',
+          pending: (claimById|async)?.status?.toLowerCase().trim() === 'under review',
           active: (claimById|async)?.status?.toLowerCase().trim() === 'approved',
           declined: (claimById|async)?.status?.toLowerCase().trim() === 'rejected'
         }">
