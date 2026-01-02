@@ -1,0 +1,164 @@
+.claims-tips {
+  background: radial-gradient(
+    circle at top,
+    #1e40af 0%,
+    #020617 65%
+  );
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* HERO */
+.tips-hero {
+  text-align: center;
+  padding: 90px 20px 60px;
+  max-width: 820px;
+  margin: auto;
+}
+
+.tips-hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.tips-hero p {
+  color: #c7d2fe;
+  line-height: 1.7;
+}
+
+/* GRID */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.tip-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #020617cc
+  );
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 28px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.25);
+}
+
+.tip-card span {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  background: #2563eb;
+  color: #eff6ff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.tip-card h3 {
+  color: #93c5fd;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  font-size: 14px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+.tip-card.highlight {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.45);
+}
+
+/* COMMON MISTAKES */
+.common-mistakes {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 40px 30px;
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #020617aa
+  );
+  border-radius: 22px;
+  border: 1px solid #1e293b;
+}
+
+.common-mistakes h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.common-mistakes ul {
+  list-style: none;
+  padding: 0;
+  color: #cbd5f5;
+}
+
+.common-mistakes li {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+/* CTA */
+.tips-cta {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background: radial-gradient(
+    circle,
+    rgba(37,99,235,0.18),
+    transparent 60%
+  );
+}
+
+.tips-cta h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.tips-cta p {
+  color: #cbd5f5;
+  margin-bottom: 26px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #2563eb;
+  color: #eff6ff;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .tips-hero h1 {
+    font-size: 30px;
+  }
+}

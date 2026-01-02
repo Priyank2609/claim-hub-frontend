@@ -1,0 +1,62 @@
+<div class="claims-list-container">
+  <h2>Claims List</h2>
+
+  <!-- Claims Table -->
+  <table class="claims-table" *ngIf="(claims | async)?.length > 0; else noClaims">
+    <thead>
+      <tr>
+        <th>Claim Number</th>
+        <th>Policy No</th>
+        <th>Customer</th>
+        <th>Claim Type</th>
+        <th>Claim Amount</th>
+        <th>Status</th>
+        <th>Claim Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let claim of claims | async">
+        <td>{{ claim.claimNumber }}</td>
+        <td>{{ claim.policyNo }}</td>
+
+        <td>
+          <div class="customer-cell">
+            <strong>{{ claim.customerID?.userName }}</strong><br />
+            <span>{{ claim.customerID?.email }}</span>
+          </div>
+        </td>
+
+        <td>{{ claim.claimType }}</td>
+        <td>{{ claim.claimAmount }}</td>
+
+        <td>
+          <span class="status-badge" [ngClass]="{
+              submitted: claim.status === 'Submitted',
+              approved: claim.status === 'Approved',
+              rejected: claim.status === 'Rejected',
+              inProgress: claim.status === 'Under Review'
+            }">
+            {{ claim.status }}
+          </span>
+        </td>
+
+        <td>{{ claim.claimDate | date: 'short' }}</td>
+
+        <td>
+          <button class="view-btn" [routerLink]="[claim._id, 'update-status']">
+            View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No Claims Message -->
+  <ng-template #noClaims>
+    <div class="no-claims">
+      🚫 No claims available at the moment.
+    </div>
+  </ng-template>
+</div>

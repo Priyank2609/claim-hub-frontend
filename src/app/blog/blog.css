@@ -1,0 +1,124 @@
+/* ========== BLOG / ARTICLES SECTION ========== */
+.latest-blogs {
+  padding: 80px 60px;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+}
+
+.blogs-container {
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Header */
+.blogs-header {
+  margin-bottom: 60px;
+}
+
+.blogs-header .section-tag {
+  background: rgba(14,165,233,0.15);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.blogs-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.blogs-header p {
+  font-size: 15px;
+  color: #cbd5f5;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding-top: 20px;
+}
+
+/* Blog Card */
+.blog-card {
+  background: #111827;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(14,165,233,0.4);
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: scale 0.3s ease;
+}
+
+.blog-card:hover .blog-img img {
+  scale: 1.05;
+}
+
+/* Content */
+.blog-content {
+  padding: 18px 22px;
+  text-align: left;
+}
+
+.blog-category {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.blog-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.blog-excerpt {
+  font-size: 15px;
+  color: #cbd5f5;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.blog-meta {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .blogs-header h2 {
+    font-size: 32px;
+  }
+
+  .blogs-grid {
+    gap: 25px;
+  }
+}

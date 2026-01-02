@@ -1,0 +1,115 @@
+<nav class="navbar">
+
+  <div class="navbar-left" routerLink="/">
+    <i class="fa-solid fa-shield-halved logo-icon"></i>
+    <span class="logo-text">ClaimHub</span>
+  </div>
+
+
+  <div class="menu-toggle" (click)="isOpen()" *ngIf="isMobile">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul class="navbar-links" *ngIf="!isMobile">
+
+    <ng-container *ngIf="(role$ | async) === 'Admin'">
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+
+      <li><a routerLink="/policies">Policies</a></li>
+      <li><a routerLink="/claims">Claims</a></li>
+      <li><a routerLink="/users">Users</a></li>
+
+    </ng-container>
+    <ng-container *ngIf="(role$ | async) === 'Agent' ">
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/policies">Policies</a></li>
+
+      <li><a routerLink="/requests">Requests</a></li>
+
+
+    </ng-container>
+
+    <ng-container *ngIf=" (role$ | async) === 'Claim Officer'">
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+
+      <li><a routerLink="/claims">Claims</a></li>
+
+    </ng-container>
+
+
+    <ng-container *ngIf="(role$ | async) === 'Customer'">
+      <li><a routerLink="/my-dashboard">Dashboard</a></li>
+      <li><a routerLink="/insurance">Insurances</a></li>
+
+    </ng-container>
+    <ng-container *ngIf="(isLoggin|async)">
+      <li><a routerLink="/help">Help</a></li>
+      <li><a routerLink="/settings">Settings</a></li>
+    </ng-container>
+
+  </ul>
+
+
+  <div class="navbar-right" *ngIf="!isMobile">
+    <ng-container *ngIf="isLoggin | async; else loggedOut">
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <button class="auth-btn login-btn" routerLink="/login">Login</button>
+      <button class="auth-btn register-btn" routerLink="/register">Register</button>
+    </ng-template>
+  </div>
+
+
+  <ul class="navbar-links mobile-menu" [class.active]="isToggle" *ngIf="isMobile">
+    <li class="menu-header">
+      <span class="menu-title">ClaimHub</span>
+      <span class="close-icon" (click)="isOpen()">&times;</span>
+    </li>
+    <ng-container *ngIf="(role$ | async) === 'Admin'">
+      <li><a routerLink="/dashboard" (click)="isOpen()">Dashboard</a></li>
+
+      <li><a routerLink="/policies" (click)="isOpen()">Policies</a></li>
+      <li><a routerLink="/claims" (click)="isOpen()">Claims</a></li>
+      <li><a routerLink="/users" (click)="isOpen()">Users</a></li>
+
+    </ng-container>
+    <ng-container *ngIf="(role$ | async) === 'Agent' ">
+      <li><a routerLink="/dashboard" (click)="isOpen()">Dashboard</a></li>
+      <li><a routerLink="/policies" (click)="isOpen()">Policies</a></li>
+
+      <li><a routerLink="/requests" (click)="isOpen()">Requests</a></li>
+
+
+    </ng-container>
+
+    <ng-container *ngIf=" (role$ | async) === 'Claim Officer'">
+      <li><a routerLink="/dashboard" (click)="isOpen()">Dashboard</a></li>
+
+      <li><a routerLink="/claims" (click)="isOpen()">Claims</a></li>
+
+    </ng-container>
+
+
+    <ng-container *ngIf="(role$ | async) === 'Customer'">
+      <li><a routerLink="/my-dashboard" (click)="isOpen()">Dashboard</a></li>
+      <li><a routerLink="/insurance" (click)="isOpen()">Insurances</a></li>
+
+    </ng-container>
+    <ng-container *ngIf="(isLoggin|async)">
+      <li><a routerLink="/help" (click)="isOpen()">Help</a></li>
+      <li><a routerLink="/settings" (click)="isOpen()">Settings</a></li>
+    </ng-container>
+
+    <div class="mobile-auth">
+      <ng-container *ngIf="isLoggin | async; else mobileLoggedOut">
+        <button class="logout-btn mobile-btn" (click)="logout()">Logout</button>
+      </ng-container>
+      <ng-template #mobileLoggedOut>
+        <button class="auth-btn login-btn mobile-btn" routerLink="/login" (click)="isOpen()">Login</button>
+        <button class="auth-btn register-btn mobile-btn" routerLink="/register" (click)="isOpen()">Register</button>
+      </ng-template>
+    </div>
+  </ul>
+</nav>

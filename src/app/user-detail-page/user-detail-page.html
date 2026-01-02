@@ -1,0 +1,70 @@
+<div class="user-detail-page">
+
+  <div class="user-card">
+
+
+    <div class="user-header">
+      <div class="avatar">{{ (user|async)?.userName.charAt(0) }}</div>
+      <div class="user-info">
+        <h2>{{ (user|async)?.userName }}</h2>
+        <p>{{ (user|async)?.email }}</p>
+        <span class="user-role">{{ (user|async)?.role }}</span>
+      </div>
+    </div>
+
+
+    <div class="user-info-grid">
+
+      <div class="info-item">
+        <span class="label">Username</span>
+        <span class="value">{{ (user|async)?.userName }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Email</span>
+        <span class="value">{{ (user|async)?.email }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Role</span>
+        <span class="value">{{ (user|async)?.role }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Date of Birth</span>
+        <span class="value">{{ (user|async)?.dateOfBirth | date:'mediumDate' }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Gender</span>
+        <span class="value">{{ (user|async)?.gender }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Marital Status</span>
+        <span class="value">{{ (user|async)?.maritalStatus }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Phone</span>
+        <span class="value">{{ (user|async)?.phone }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Address</span>
+        <span class="value">
+          {{ (user|async)?.address.street }}, {{ (user|async)?.address.city }}, {{ (user|async)?.address.state }}, {{
+          (user|async)?.address.country }} - {{
+          (user|async)?.address.postalCode }}
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="user-actions">
+      <button class="btn primary" routerLink="/users">Back to Users</button>
+    </div>
+  </div>
+
+</div>

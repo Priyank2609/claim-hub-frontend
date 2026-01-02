@@ -1,0 +1,99 @@
+.insurance-stats {
+  padding: 60px 40px; /* reduced vertical padding */
+  background: 
+    linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.85)),
+    url('https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.stats-header {
+  margin-bottom: 40px; /* reduced spacing */
+}
+
+.stats-header .section-tag {
+  background: rgba(14,165,233,0.15);
+  color: #38bdf8;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.stats-header h2 {
+  font-size: 36px; /* slightly smaller */
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.stats-header p {
+  font-size: 14px;
+  color: #cbd5f5;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 35px; /* smaller icon */
+  color: #0ea5e9;
+  margin-bottom: 10px;
+  padding: 20px; /* circular space */
+  border: 2px solid #0ea5e9; /* border around icon */
+  border-radius: 50%; /* circular shape */
+  background: rgba(14,165,233,0.05); /* subtle background */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.stat-icon:hover {
+  transform: scale(1.2); /* slightly bigger */
+  box-shadow: 0 0 20px #0ea5e9, 0 0 40px rgba(14,165,233,0.5);
+  border-color: #22d3ee; /* change border color on hover */
+  background: rgba(14,165,233,0.1); /* brighten background on hover */
+}
+
+
+.stat-item h3 {
+  font-size: 28px; /* smaller number */
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #38bdf8;
+}
+
+.stat-item p {
+  font-size: 14px; /* smaller text */
+  color: #cbd5f5;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .stats-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

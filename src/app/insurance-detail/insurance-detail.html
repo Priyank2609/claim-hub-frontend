@@ -1,0 +1,55 @@
+<div class="detail-layout" *ngIf="policy">
+  <button class="mobile-menu-toggle" (click)="openMenu()">☰</button>
+
+
+  <aside class="sidebar" [class.open]="isMenuOpen">
+    <h3>All Services</h3>
+    <ul class="policy-menu">
+      <li *ngFor="let p of allPolicies" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="['/insurance', p.slug]" (click)="closeMenuOnMobile()">
+          {{ p.title }}
+          <span class="arrow">→</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+
+  <div class="overlay" [class.show]="isMenuOpen" (click)="openMenu()"></div>
+
+
+  <div class="main-content">
+
+    <div class="hero-banner">
+      <img [src]="policy.bannerImage" [alt]="policy.title" class="banner-img">
+      <div class="hero-overlay">
+        <h1>{{ policy.title }}</h1>
+        <p>{{ policy.description }}</p>
+      </div>
+    </div>
+
+
+    <div class="promo-banner" *ngIf="policy.promoImage">
+      <img [src]="policy.promoImage" [alt]="'Get ' + policy.title + ' today'">
+      <div class="promo-text">
+        <h2>Get {{ policy.title }} today.</h2>
+        <button class="btn-promo">Get a Quote</button>
+      </div>
+    </div>
+
+
+    <div class="features-section">
+      <h2>Key Features & Benefits</h2>
+      <ul class="features-list">
+        <li *ngFor="let feature of policy.features">
+          <i class="fas fa-check"></i> {{ feature }}
+        </li>
+      </ul>
+
+      <div class="cta-section">
+        <button class="btn-primary" routerLink="/quote">Get a Quote</button>
+        <button class="btn-secondary">Contact Agent</button>
+      </div>
+    </div>
+  </div>
+</div>

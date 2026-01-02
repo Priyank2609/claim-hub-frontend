@@ -1,0 +1,74 @@
+<div class="request-page">
+
+  <div class="request-header">
+    <h2>Policy Requests</h2>
+    <p>View and manage customer policy requests</p>
+  </div>
+
+  <div class="request-table-wrapper">
+    <table class="request-table">
+      <thead>
+        <tr>
+          <th>Request ID</th>
+          <th>Policy Type</th>
+          <th>Message</th>
+          <th>Requested On</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="pendindRequest | async as reqList">
+
+        <tr *ngIf="reqList.length===0">
+          <td colspan="6" class="no-data">
+            No policy requests available
+
+          </td>
+        </tr>
+
+
+
+        <tr *ngFor="let req of reqList">
+          <ng-container *ngIf="!req.policyId">
+
+            <td>#{{ req._id | slice:0:8 }}</td>
+
+            <td>
+              <span class="policy-badge life">
+                {{ req.policyType }}
+              </span>
+            </td>
+
+            <td class="message">
+              {{ req.message }}
+            </td>
+
+            <td>{{ req.createdAt | date:'dd MMM yyyy' }}</td>
+
+            <td>
+              <span class="status-badge" [ngClass]="{
+            'pending': req.status === 'Pending',
+            'approved': req.status === 'Approved',
+            'rejected': req.status === 'Rejected'
+          }">
+                {{ req.status || 'Pending' }}
+              </span>
+            </td>
+
+            <td>
+              <button class="btn assign" [routerLink]="[req._id,'create-policy']">
+                Create Policy
+              </button>
+            </td>
+
+          </ng-container>
+        </tr>
+
+      </tbody>
+
+
+    </table>
+  </div>
+
+</div>

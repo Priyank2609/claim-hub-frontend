@@ -1,0 +1,141 @@
+/* ================= Settings Container ================= */
+.settings-container {
+  background: #0f172a; /* main dark background */
+  color: #e5e7eb;
+  padding: 30px;
+  border-radius: 16px;
+  min-height: 80vh;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Headings */
+.settings-container h2 {
+  color: #f1f5f9; /* bright white */
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.settings-container h3 {
+  color: #3b82f6; /* light blue accent */
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.settings-container h4 {
+  color: #60a5fa; /* lighter blue for sub-headings */
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+/* Paragraphs */
+.settings-container p {
+  color: #cbd5e1; /* soft gray */
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Profile Section (cards) */
+.profile-settings {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+.profile-settings:hover {
+  transform: translateY(-3px);
+}
+
+/* Password Section (cards) */
+.password-settings {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.password-settings label {
+  font-weight: 500;
+  color: #94a3b8;
+}
+.password-settings input[type="password"] {
+  width: 92%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #e5e7eb;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.password-settings input[type="password"]:focus {
+  border: 1px solid #3b82f6;
+  outline: none;
+  box-shadow: 0 0 8px rgba(59,130,246,0.3);
+}
+
+/* Buttons */
+.settings-container button {
+  padding: 10px 20px;
+  background: #3b82f6;
+  margin-right: 15px;
+  color: #0f172a;
+  font-weight: 600;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+.settings-container button:hover {
+  background: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Role-specific sections */
+section[ng-reflect-ng-if] {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+}
+section[ng-reflect-ng-if]:hover {
+  transform: translateY(-3px);
+}
+section[ng-reflect-ng-if] p {
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 20px;
+    gap: 20px;
+  }
+  .settings-container h2 {
+    font-size: 28px;
+  }
+  .settings-container h3 {
+    font-size: 20px;
+  }
+  .settings-container h4 {
+    font-size: 16px;
+  }
+  .password-settings input[type="password"] {
+    font-size: 14px;
+  }
+  .settings-container button {
+    padding: 8px 16px;
+  }
+}

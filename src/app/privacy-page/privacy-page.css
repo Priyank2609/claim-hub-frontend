@@ -1,0 +1,84 @@
+.privacy-page {
+  background: radial-gradient(
+    circle at top,
+    #1e40af 0%,
+    #020617 70%
+  );
+  color: #e5e7eb;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* HERO */
+.privacy-hero {
+  text-align: center;
+  max-width: 860px;
+  margin: auto;
+  padding: 90px 20px 60px;
+}
+
+.privacy-hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.privacy-hero p {
+  color: #cbd5f5;
+  line-height: 1.7;
+}
+
+/* CONTENT */
+.privacy-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.policy-card {
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #020617cc
+  );
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 26px 28px;
+  margin-bottom: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.25);
+}
+
+.policy-card h2 {
+  color: #93c5fd;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.policy-card p {
+  color: #cbd5f5;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.policy-card ul {
+  padding-left: 18px;
+  color: #cbd5f5;
+}
+
+.policy-card li {
+  margin: 8px 0;
+  font-size: 14.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .privacy-hero h1 {
+    font-size: 30px;
+  }
+}

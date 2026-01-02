@@ -1,0 +1,200 @@
+/* ================== PAGE CONTAINER ================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Page Title */
+.container h1 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================== GRID ================== */
+.policies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ================== POLICY CARD ================== */
+.policy-card {
+  background: linear-gradient(180deg, #020617, #020617);
+  border-radius: 18px;
+  padding: 26px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.policy-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+}
+
+.policy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.9);
+}
+
+/* ================== HEADER ================== */
+.policy-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.policy-icon {
+  font-size: 28px;
+  color: #a78bfa;
+}
+
+.policy-type {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* ================== BODY ================== */
+.policy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Info section */
+.policy-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.policy-number {
+  color: #60a5fa;
+  letter-spacing: 0.04em;
+}
+
+/* ================== STATUS BADGES ================== */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.status-active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status-expired {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.status-pending {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+/* ================== VIEW DETAILS ================== */
+.view-details {
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #60a5fa;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.view-details .arrow {
+  transition: transform 0.25s ease;
+}
+
+.view-details:hover {
+  color: #93c5fd;
+}
+
+.view-details:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* ================== EMPTY STATE ================== */
+.empty-state {
+  margin-top: 80px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.empty-icon {
+  font-size: 48px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.empty-state .subtitle {
+  display: block;
+  margin: 8px 0 22px;
+  font-size: 14px;
+}
+
+.btn-explore {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+  color: #020617;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-explore:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4);
+}

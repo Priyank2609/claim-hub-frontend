@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Policy Overview</h1>
+
+
+  <div class="policies-grid">
+    <div class="policy-card" *ngFor="let policy of policiesList | async"
+      [attr.data-type]="policy.policyType.toLowerCase()">
+
+      <div class="policy-header">
+        <i class="policy-icon" [ngClass]="getPolicyIcon(policy.policyType)"></i>
+        <h3 class="policy-type">{{ policy.policyType }}</h3>
+      </div>
+
+      <div class="policy-body">
+        <div class="policy-info">
+          <div class="info-item">
+            <span class="label">Policy Number</span>
+            <span class="value policy-number">{{ policy.policyNumber }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Status</span>
+            <span class="status-badge" [ngClass]="{
+                    'status-active': policy.status === 'Active',
+                    'status-expired': policy.status === 'Expired',
+                    'status-pending': policy.status === 'Pending'
+                  }">
+              {{ policy.status }}
+            </span>
+          </div>
+        </div>
+
+        <a [routerLink]="[policy._id]" class="view-details">
+          View Details <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="(policiesList | async)?.length === 0">
+    <i class="empty-icon fas fa-file-alt"></i>
+    <p>No policies found</p>
+    <span class="subtitle">You haven't purchased any policies yet.</span>
+    <a routerLink="/policies" class="btn-explore">Explore Available Policies</a>
+  </div>
+</div>

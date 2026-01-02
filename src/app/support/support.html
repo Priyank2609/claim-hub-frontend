@@ -1,0 +1,64 @@
+<div class="support-container">
+
+
+  <div class="support-hero">
+    <h1>We're Here to Help</h1>
+    <p>Need assistance? Reach out to our support team or find answers in our FAQs.</p>
+  </div>
+
+
+  <div class="contact-info">
+    <h2>Contact Us</h2>
+    <div class="contact-cards">
+      <div class="card">
+        <h3>Phone</h3>
+        <p>+91 12345 67890</p>
+      </div>
+      <div class="card">
+        <h3>Email</h3>
+        <p>support@insurancehub.com</p>
+      </div>
+      <div class="card">
+        <h3>Address</h3>
+        <p>123 Insurance Street, Mumbai, India</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How do I file a claim?</h3>
+      <p>You can file a claim directly from your dashboard or contact support for guidance.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What documents are required for a claim?</h3>
+      <p>Typically, your policy document, ID proof, and claim-related documents are required.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does claim processing take?</h3>
+      <p>Most claims are processed within 7–10 business days, depending on verification.</p>
+    </div>
+  </div>
+
+
+  <div class="support-form-section">
+    <h2>Send Us a Message</h2>
+    <form class="support-form" #supForm="ngForm" (ngSubmit)="onSupport(supForm)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" name="fullName" ngModel required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" name="email" ngModel required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Enter subject" name="subject" ngModel required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message" name="message" ngModel required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>

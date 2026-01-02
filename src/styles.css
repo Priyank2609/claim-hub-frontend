@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+ 
+  background-color: #020617; /* deep dark */
+  color: #e5e7eb;           /* light text */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 
+               'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+               'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+}
+html, body {
+  height: 100%;
+}
+
+app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar (optional but nice for dark theme) */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+/* 
+.mat-mdc-snack-bar-container  .mat-mdc-snackbar-surface {
+   background-color: #0a3bdf !important;
+   color: #fff;
+} */
+
+
+/* Base snackbar container */
+.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  color: #fff !important;
+  background-color: transparent !important
+}
+
+/* Info / General */
+.snackbar-info {
+  background-color: #1e2a47 !important; /* dark navy, blends with background */
+  color: #ffffff !important;
+}
+.snackbar-pending {
+  background-color: #5b21b6 !important; /* indigo-700, premium vibe */
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+
+/* Success */
+/* .snackbar-success {
+  background-color: #22c55e !important;
+  color: #fff !important;
+} */
+.snackbar-success {
+  background-color: #0d9488 !important; /* teal */
+  color: #fff !important;
+}
+/* Error */
+.snackbar-error {
+  background-color: #ef4444 !important; /* red for errors */
+  color: #fff !important;
+}
+
+/* Warning */
+.snackbar-warning {
+  background-color: #f59e0b !important; /* amber / orange for warnings */
+  color: #1f2937 !important; /* dark text for contrast */
+}
+

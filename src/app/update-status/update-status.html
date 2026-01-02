@@ -1,0 +1,92 @@
+<div class="claim-page" *ngIf="claimById">
+
+  <div class="claim-card">
+
+
+    <div class="claim-header">
+      <h2>Claim Details</h2>
+      <span class="status-badge" [ngClass]="(claimById|async)?.status.toLowerCase()">
+        {{ (claimById|async)?.status }}
+      </span>
+    </div>
+
+
+    <div class="section">
+      <h3>Claim Information</h3>
+
+      <div class="info-grid">
+        <div>
+          <label>Claim Number</label>
+          <p>{{ (claimById|async)?.claimNumber }}</p>
+        </div>
+
+        <div>
+          <label>Policy Number</label>
+          <p>{{ (claimById|async)?.policyNo }}</p>
+        </div>
+
+        <div>
+          <label>Claim Type</label>
+          <p>{{ (claimById|async)?.claimType }}</p>
+        </div>
+
+        <div>
+          <label>Claim Amount</label>
+          <p>{{ (claimById|async)?.claimAmount }}</p>
+        </div>
+
+        <div>
+          <label>Reason</label>
+          <p>{{ (claimById|async)?.reason }}</p>
+        </div>
+
+        <div>
+          <label>Claim Date</label>
+          <p>{{ (claimById|async)?.claimDate | date:'medium' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Customer Information</h3>
+
+      <div class="info-grid">
+        <div>
+          <label>Name</label>
+          <p>{{ (claimById|async)?.customerID.userName }}</p>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <p>{{ (claimById|async)?.customerID.email }}</p>
+        </div>
+
+        <div>
+          <label>Phone</label>
+          <p>{{ (claimById|async)?.customerID.phone }}</p>
+        </div>
+
+        <div>
+          <label>Address</label>
+          <p>
+            {{ (claimById|async)?.customerID.address.street }},
+            {{ (claimById|async)?.customerID.address.city }},
+            {{ (claimById|async)?.customerID.address.state }},
+            {{ (claimById|async)?.customerID.address.country }} -
+            {{ (claimById|async)?.customerID.address.postalCode }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="status-actions" *ngIf="(role|async)==='Claim Officer'">
+      <input type="text" placeholder="Add a remark" [(ngModel)]="remark" class="remark-input" />
+      <button class="approved" (click)="onUpdate({ status: 'Approved', remark: remark })">Approved</button>
+      <button class="rejected" (click)="onUpdate({ status: 'Rejected', remark: remark })">Rejected</button>
+      <button class="review" (click)="onUpdate({ status: 'Under Review', remark: remark })">Under Review</button>
+
+    </div>
+
+  </div>
+</div>

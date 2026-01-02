@@ -1,0 +1,67 @@
+<div class="help-container">
+  <h2>Help Center</h2>
+  <p>Find answers, guides, and support based on your role.</p>
+
+
+  <section class="faq-section">
+    <h3>FAQs</h3>
+    <ul>
+      <li>How to create a policy?</li>
+      <li>How to file a claim?</li>
+      <li>How to track claim status?</li>
+      <li>How to reset my password?</li>
+      <li>How to contact support?</li>
+      <li>How to update my profile information?</li>
+    </ul>
+  </section>
+
+
+  <section *ngIf="(role$ | async) === 'Admin'" class="role-guides">
+    <h3>Admin Guides</h3>
+    <ul>
+      <li>Managing users and permissions</li>
+      <li>Generating reports and audit logs</li>
+      <li>Monitoring system activity</li>
+      <li>Managing insurance types and policies</li>
+    </ul>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Agent'" class="role-guides">
+    <h3>Agent Guides</h3>
+    <ul>
+      <li>Creating and managing client policies</li>
+      <li>Handling client requests</li>
+      <li>Scheduling client meetings</li>
+      <li>Tracking policy renewals</li>
+    </ul>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Claim Officer'" class="role-guides">
+    <h3>Claim Officer Guides</h3>
+    <ul>
+      <li>Reviewing and approving claims</li>
+      <li>Escalating claim issues</li>
+      <li>Updating claim status</li>
+      <li>Generating claim summary reports</li>
+    </ul>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Customer'" class="role-guides">
+    <h3>Customer Guides</h3>
+    <ul>
+      <li>Filing and tracking claims</li>
+      <li>Renewing policies</li>
+      <li>Raising support tickets</li>
+      <li>Viewing policy documents</li>
+      <li>Checking premium payment history</li>
+    </ul>
+  </section>
+
+
+  <section class="contact-support">
+    <h3>Contact Support</h3>
+    <p>Email: <a href="mailto:support@claimhub.com">support@claimhub.com</a></p>
+    <p>Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
+    <p>Live Chat: <a href="/chat">Click here to start</a></p>
+  </section>
+</div>

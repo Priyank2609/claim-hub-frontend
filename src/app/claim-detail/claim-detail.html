@@ -1,0 +1,67 @@
+<div class="claim-details-container">
+
+
+  <div class="claim-header">
+    <h2>Claim Details</h2>
+    <p>Review the status, remark, and information of your submitted claim.</p>
+  </div>
+
+
+  <div class="claim-card">
+
+    <div class="claim-row">
+      <span class="label">Claim Number</span>
+      <span class="value">{{(claimById | async)?.claimNumber}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Policy Number</span>
+      <span class="value">{{(claimById | async)?.policyNo}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Claim Type</span>
+      <span class="value">{{(claimById | async)?.claimType}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Claim Amount</span>
+      <span class="value">{{(claimById | async)?.claimAmount}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Reason</span>
+      <span class="value">{{(claimById | async)?.reason}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Submitted On</span>
+      <span class="value">{{(claimById | async)?.claimDate | date:'medium'}}</span>
+    </div>
+
+    <div class="claim-row">
+      <span class="label">Status</span>
+      <span class="status" [ngClass]="{
+          submitted: (claimById|async)?.status?.toLowerCase().trim() === 'submitted',
+          pending: (claimById|async)?.status?.toLowerCase().trim() === 'pending',
+          active: (claimById|async)?.status?.toLowerCase().trim() === 'approved',
+          declined: (claimById|async)?.status?.toLowerCase().trim() === 'rejected'
+        }">
+        {{(claimById | async)?.status}}
+      </span>
+    </div>
+
+
+    <div class="claim-row" *ngIf="(claimById | async)?.remark">
+      <span class="label">Remark</span>
+      <span class="value">{{(claimById | async)?.remark}}</span>
+    </div>
+
+  </div>
+
+  <div class="claim-actions">
+    <button routerLink="/my-dashboard" class="secondary-btn">Back to Claims</button>
+    <button routerLink="/contact-support" class="primary-btn" routerLink="/support">Contact Support</button>
+  </div>
+
+</div>

@@ -1,0 +1,48 @@
+<section class="dashboard-summary">
+  <div class="summary-container">
+
+
+    <div class="summary-header">
+      <h2>Insurance Dashboard</h2>
+      <p>Overview of claims, policies, and monthly statistics.</p>
+    </div>
+
+
+    <div class="summary-cards">
+      <div class="summary-card">
+        <h3>Total Claims</h3>
+        <p>{{(claims|async)?.totalClaims||"0"}}</p>
+      </div>
+      <div class="summary-card approved">
+        <h3>Approved Claims</h3>
+        <p>{{(claims|async)?.claimApproved}}</p>
+      </div>
+      <div class="summary-card rejected">
+        <h3>Rejected Claims</h3>
+        <p>{{(claims|async)?.claimRejected||0}}</p>
+      </div>
+      <div class="summary-card under-review">
+        <h3>Under Review Claims</h3>
+        <p>{{(claims|async)?.claimUnderReview||0}}</p>
+      </div>
+      <div class="summary-card policies" *ngIf="(role$|async)!=='Claim Officer' ">
+        <h3>Total Policies</h3>
+        <p>{{(policies|async)}}</p>
+      </div>
+    </div>
+
+
+    <div class="charts-grid">
+      <div class="chart-card" *ngIf="(role$|async)!=='Agent'">
+        <h3>Monthly Claims</h3>
+        <canvas id="monthlyClaimsChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Claim Status Distribution</h3>
+        <canvas id="claimStatusPieChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,50 @@
+<div class="claim-container">
+  <div class="claim-card">
+    <h2>Create New Claim</h2>
+    <form #createClaim="ngForm" (ngSubmit)="onCreate(createClaim)" novalidate>
+
+
+      <label for="policyNo">Policy Number</label>
+      <input type="text" id="policyNo" placeholder="Enter policy number" name="policyNo" ngModel required
+        #policyNoField="ngModel" />
+      <div class="error-message" *ngIf="policyNoField.invalid && policyNoField.touched">
+        Policy number is required.
+      </div>
+
+
+      <label for="claimType">Claim Type</label>
+      <select id="claimType" name="claimType" ngModel required #claimTypeField="ngModel">
+        <option value="" disabled>Select claim type</option>
+        <option value="Natural Disaster">Natural Disaster</option>
+        <option value="Theft">Theft</option>
+        <option value="Accident">Accident</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="error-message" *ngIf="claimTypeField.invalid && claimTypeField.touched">
+        Please select a claim type.
+      </div>
+
+      <label for="claimAmount">Claim Amount</label>
+      <input type="text" id="claimAmount" placeholder="Enter claim amount" name="claimAmount" ngModel required
+        #claimAmountField="ngModel" />
+      <div class="error-message" *ngIf="claimAmountField.invalid && claimAmountField.touched">
+        <span *ngIf="claimAmountField.errors?.['required']">Claim amount is required.</span>
+        <span *ngIf="claimAmountField.errors?.['min']">Claim amount must be greater than 0.</span>
+      </div>
+
+
+      <label for="reason">Reason / Description</label>
+      <textarea id="reason" rows="4" placeholder="Enter reason for claim" name="reason" ngModel required
+        #reasonField="ngModel"></textarea>
+      <div class="error-message" *ngIf="reasonField.invalid && reasonField.touched">
+        Please provide a reason for the claim.
+      </div>
+
+
+      <button type="submit">
+        Submit Claim <i class="fa-solid fa-paper-plane"></i>
+      </button>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,175 @@
+/* ================= PAGE ================= */
+.request-page {
+  min-height: 100vh;
+  padding: 80px 32px 40px;
+  background: radial-gradient(circle at top, #020617, #0f172a);
+  font-family: 'Inter', sans-serif;
+  color: #e5e7eb;
+}
+
+/* ================= HEADER ================= */
+.request-header {
+  margin-bottom: 28px;
+}
+
+.request-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.request-header p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ================= TABLE ================= */
+.request-table-wrapper {
+  background: #020617;
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+  overflow-x: auto;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.request-table thead th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a5b4fc;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Body */
+.request-table tbody tr {
+  transition: background 0.25s ease;
+}
+
+.request-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.request-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.message {
+  max-width: 320px;
+  color: #cbd5f5;
+}
+
+/* ================= POLICY BADGE ================= */
+.policy-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Life */
+.policy-badge.life {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+}
+
+/* Health */
+.policy-badge.health {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  margin-right: 8px;
+}
+
+/* Assign */
+.btn.assign {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+.btn.assign:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.45);
+}
+
+/* View */
+.btn.view {
+  background: transparent;
+  border: 1px solid #1f2937;
+  color: #e5e7eb;
+  opacity: 0.85;
+}
+
+.btn.view:hover {
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 1;
+}
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Pending */
+.status-badge.pending {
+  background-color: #facc15;
+  color: #000;
+}
+
+/* Approved */
+.status-badge.approved {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+/* Rejected */
+.status-badge.rejected {
+  background-color: #ef4444;
+  color: #fff;
+}
+.no-data {
+  text-align: center;
+  padding: 20px;
+  font-weight: 600;
+  color: #64748b;
+  /* background-color: #f8fafc; */
+}
+@media (max-width: 768px) {
+  .message {
+    max-width: 180px;
+    font-size: 11.5px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;   /* 🔽 number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

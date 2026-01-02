@@ -1,0 +1,42 @@
+<div class="all-users-page">
+
+  <h2>All Users</h2>
+
+  <div class="users-grid" *ngIf="(users|async)?.length>0; else noUsers">
+    <div class="user-card" *ngFor="let user of users |async">
+      <div class="user-header">
+        <div class="avatar">{{ user.userName.charAt(0) }}</div>
+        <div class="user-info">
+          <h3>{{ user.userName }}</h3>
+          <p>{{ user.email }}</p>
+        </div>
+
+      </div>
+
+      <div class="user-details">
+        <div class="info-item">
+          <span class="label">Username</span>
+          <span class="value">{{ user.userName }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Role</span>
+          <span class="value">{{ user.role }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Registered On</span>
+          <span class="value">{{ user.createdAt | date:'mediumDate' }}</span>
+        </div>
+      </div>
+
+      <div class="user-actions">
+        <button class="btn primary" [routerLink]="[user._id]">View</button>
+
+      </div>
+    </div>
+  </div>
+  <ng-template #noUsers>
+    <div class="no-claims">
+      🚫 No users available at the moment.
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,49 @@
+<div class="policy-detail-page">
+  <div class="policy-card">
+
+    <div class="policy-header">
+      <h1>{{(policyDetail|async)?.policyType}}Insurance Policy</h1>
+      <span class="policy-status active">Active</span>
+    </div>
+
+    <div class="policy-info-grid">
+      <div class="info-item">
+        <span class="label">Policy Number</span>
+        <span class="value">{{(policyDetail|async)?.policyNumber}}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Policy Type</span>
+        <span class="value">{{(policyDetail|async)?.policyType}}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Coverage Amount</span>
+        <span class="value highlight">{{(policyDetail|async)?.coverageAmount}}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Annual Premium</span>
+        <span class="value">{{(policyDetail|async)?.premium}}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Start Date</span>
+        <span class="value">{{(policyDetail|async)?.startDate|date:'medium'}}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">End Date</span>
+        <span class="value">{{(policyDetail|async)?.endDate|date:'medium'}}</span>
+      </div>
+
+
+    </div>
+
+
+    <div class="policy-actions" *ngIf="(policyDetail|async ) as policy">
+      <button class="btn primary" (click)="download(policy._id)">Download Policy</button>
+      <button class="btn secondary" routerLink="/support">Contact Support</button>
+    </div>
+  </div>
+</div>

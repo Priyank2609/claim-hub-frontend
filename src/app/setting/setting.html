@@ -1,0 +1,78 @@
+<div class="settings-container">
+  <h2>Settings</h2>
+  <p>Configure your account and preferences.</p>
+
+
+  <section class="profile-settings">
+    <h3>Profile</h3>
+
+    <p><strong>Username:</strong> {{ (user|async)?.userName }}</p>
+    <p><strong>Email:</strong> {{ (user|async)?.email }}</p>
+    <p><strong>Phone:</strong> {{ (user|async)?.phone }}</p>
+    <p><strong>Gender:</strong> {{ (user|async)?.gender }}</p>
+    <p><strong>Marital Status:</strong> {{ (user|async)?.maritalStatus }}</p>
+    <p><strong>Date of Birth:</strong> {{ (user|async)?.dateOfBirth | date:'longDate' }}</p>
+
+    <h4>Address</h4>
+    <p>{{ (user|async)?.address.street }}, {{ (user|async)?.address.city }}, {{ (user|async)?.address.state }}, {{
+      (user|async)?.address.country }} - {{
+      (user|async)?.address.postalCode }}</p>
+
+    <p><strong>Role:</strong> {{ (user|async)?.role }}</p>
+    <p><strong>Account Created:</strong> {{ (user|async)?.createdAt | date:'short' }}</p>
+
+  </section>
+
+
+
+  <section class="password-settings">
+    <h3>Change Password</h3>
+
+
+    <button *ngIf="!showPasswordForm" (click)="showPasswordForm = true">
+      Change Password
+    </button>
+    <form #changePass="ngForm" (ngSubmit)="onChangePassword(changePass)">
+      <div *ngIf="showPasswordForm">
+        <label>Old Password:</label>
+        <input type="password" name="password" ngModel>
+
+        <label>New Password:</label>
+        <input type="password" name="newPassword" ngModel>
+
+        <label>Confirm New Password:</label>
+        <input type="password" name="confirmPassword" ngModel>
+
+        <button>Update Password</button>
+        <button (click)="showPasswordForm = false">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+
+
+
+
+
+
+
+  <section *ngIf="(role$ | async) === 'Admin'">
+    <h3>Admin Settings</h3>
+    <p>Manage roles, system preferences, and app-wide configurations.</p>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Agent'">
+    <h3>Agent Settings</h3>
+    <p>Set your availability and notification preferences for client requests.</p>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Claim Officer'">
+    <h3>Claim Officer Settings</h3>
+    <p>Configure claim approval preferences and notifications.</p>
+  </section>
+
+  <section *ngIf="(role$ | async) === 'Customer'">
+    <h3>Customer Settings</h3>
+    <p>Manage billing info, policy reminders, and preferred contact method.</p>
+  </section>
+</div>

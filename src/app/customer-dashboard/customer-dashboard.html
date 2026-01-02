@@ -1,0 +1,160 @@
+<div class="dashboard-container">
+
+
+  <div class="dashboard-header">
+    <h2>Welcome to ClaimHub</h2>
+    <p>
+      Track your insurance coverage, manage policies, and submit claims — all in one place.
+    </p>
+  </div>
+
+  <div class="info-banner">
+    <span class="info-icon">ℹ️</span>
+    <span>
+      Keep your policy details updated to ensure faster claim approvals.
+    </span>
+  </div>
+
+  <div class="table-section">
+    <h3>My Policies</h3>
+
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>Policy Number</th>
+          <th>Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let policy of policies | async">
+          <td data-label="Policy Number">
+            {{ policy.policyNumber }}
+          </td>
+
+          <td data-label="Type">
+            {{ policy.policyType }}
+          </td>
+
+          <td data-label="Start Date">
+            {{ policy.startDate | date:'shortDate' }}
+          </td>
+
+          <td data-label="End Date">
+            {{ policy.endDate | date:'shortDate' }}
+          </td>
+
+          <td data-label="Status" [ngClass]="{
+        active: policy.status?.toLowerCase().trim() === 'active',
+        expired: policy.status?.toLowerCase().trim() === 'expired',
+       
+      }">
+            {{ policy.status || 'Pending' }}
+          </td>
+
+          <td data-label="Action">
+            <a [routerLink]="['policy', policy._id]" class="view-btn">
+              View
+            </a>
+          </td>
+        </tr>
+
+        <tr *ngIf="(policies | async)?.length === 0">
+          <td colspan="6" class="empty-row">
+            You don’t have any policies yet.
+            <a routerLink="/insurance">Browse policies</a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+  <div class="table-section">
+    <h3>My Claims</h3>
+
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>Claim Number</th>
+          <th>Policy Number</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Submitted On</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let claim of claims | async">
+          <td data-label="Claim Number">
+            {{ claim.claimNumber }}
+          </td>
+
+          <td data-label="Policy Number">
+            {{ claim.policyNo }}
+          </td>
+
+          <td data-label="Type">
+            {{ claim.claimType }}
+          </td>
+
+          <td data-label="Status" [ngClass]="{
+        active: claim.status?.toLowerCase().trim() === 'approved',
+        declined: claim.status?.toLowerCase().trim() === 'rejected',
+        submitted: claim.status?.toLowerCase().trim() === 'submitted',
+        review:claim.status?.toLowerCase().trim()==='under review'
+      }">
+            {{ claim.status }}
+          </td>
+
+          <td data-label="Submitted On">
+            {{ claim.createdAt | date:'shortDate' }}
+          </td>
+
+          <td data-label="Action">
+            <a [routerLink]="['/my-dashboard/claim', claim._id]" class="view-btn">
+              View
+            </a>
+          </td>
+        </tr>
+
+        <tr *ngIf="(claims | async)?.length === 0">
+          <td colspan="6" class="empty-row">
+            No claims submitted yet.
+            <a routerLink="/create-claim">Create your first claim</a>
+          </td>
+        </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+
+
+  <div class="quick-actions">
+    <h3>Quick Actions</h3>
+
+    <button routerLink="/create-claim" class="action-btn">
+      Create New Claim
+    </button>
+
+    <button routerLink="/quote" class="action-btn">
+      Request a Quote
+    </button>
+
+    <button routerLink="/support" class="action-btn">
+      Contact Support
+    </button>
+
+    <p class="quick-hint">
+      Need help? Our support team is available 24/7.
+    </p>
+  </div>
+
+</div>

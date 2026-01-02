@@ -1,0 +1,199 @@
+/* ================= ABOUT SECTION ================= */
+.about {
+  padding: 100px 60px; /* reduced horizontal padding for more width */
+  background:
+    radial-gradient(circle at left, rgba(14,165,233,0.08), transparent 40%),
+    #020617;
+}
+
+/* Container */
+.about-container {
+  width: 100%;
+  max-width: 1600px; /* wider for large screens */
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* image slightly larger */
+  gap: 60px;
+  align-items: center;
+}
+
+/* ================= IMAGE ================= */
+.about-image {
+  position: relative;
+  width: 100%;
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(2,6,23,0.15),
+    rgba(2,6,23,0.75)
+  );
+  z-index: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+  position: relative;
+  z-index: 0;
+}
+
+/* ================= EXPERIENCE BADGE ================= */
+.experience-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+  color: #020617;
+  padding: 18px 24px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.experience-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.experience-badge h3 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+}
+
+.experience-badge span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 2px;
+  color: #020617;
+  letter-spacing: 0.5px;
+}
+
+/* ================= LOGO ICON ================= */
+.about-logo {
+  margin-bottom: 20px;
+}
+
+.about-logo .logo-icon {
+  font-size: 56px; /* larger for wide layout */
+  color: #0ea5e9;
+  background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 18px;
+  background-color: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+}
+
+
+
+/* ================= CONTENT ================= */
+.about-tag {
+  background: rgba(14,165,233,0.15);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.about-content h2 {
+  font-size: 48px; /* bigger for wider layout */
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: #e5e7eb;
+}
+
+.about-desc {
+  font-size: 18px;
+  color: #cbd5f5;
+  max-width: 600px;
+  line-height: 1.8;
+  margin-bottom: 26px;
+}
+
+/* ================= LIST ================= */
+.about-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #cbd5f5;
+}
+
+.about-points i {
+  color: #22c55e;
+  font-size: 16px;
+}
+
+/* ================= BUTTON ================= */
+.about-btn {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #020617;
+  padding: 16px 40px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 1200px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    /* padding: 50px 30px; */
+  }
+
+  .about-image img {
+    height: 450px;
+  }
+
+  .about-content h2 {
+    font-size: 36px;
+  }
+
+  .about-desc {
+    font-size: 16px;
+  }
+
+  .about-logo .logo-icon {
+    font-size: 48px;
+    padding: 12px;
+  }
+
+  .experience-badge {
+    padding: 14px 18px;
+    bottom: 16px;
+    right: 16px;
+    h3 {
+      font-size: 24px;
+    }
+  }
+}

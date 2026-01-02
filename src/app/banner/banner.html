@@ -1,0 +1,63 @@
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="hero-tag">Secure & Trusted</span>
+
+    <h1>
+      Smart Insurance <br />
+      Claims Management
+    </h1>
+
+    <p>
+      Manage policies, track claims, and simplify insurance operations
+      with ClaimHub.
+    </p>
+
+    <ng-container *ngIf="!(isLoggin | async)">
+      <button class="btn-primary" routerLink="/login">Get Started</button>
+    </ng-container>
+
+    <ng-container *ngIf="(role|async)=== 'Admin'">
+      <div class="hero-actions">
+        <button class="btn-primary" routerLink="/dashboard">Dashboard</button>
+        <button class="btn-outline" routerLink="/users">Users</button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(role|async)=== 'Agent'">
+      <div class="hero-actions">
+        <button class="btn-primary" routerLink="/dashboard">Dashboard</button>
+        <button class="btn-outline" routerLink="/requests">View Requests</button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(role|async)=== 'Customer'">
+      <div class="hero-actions">
+        <button class="btn-primary" routerLink="my-dashboard">Dashboard</button>
+        <button class="btn-outline" routerLink="/insurance">View Insurance</button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(role|async)=== 'Claim Officer'">
+      <div class="hero-actions">
+        <button class="btn-primary" routerLink="/dashboard">Dashboard</button>
+        <button class="btn-outline" routerLink="/claims">View Claims</button>
+      </div>
+    </ng-container>
+
+  </div>
+
+
+  <div class="hero-cards" *ngIf="(role|async)=== 'Admin'">
+    <div class="card" routerLink="/policies">
+      <i class="fa-solid fa-file-shield"></i>
+      <span>Policy Management</span>
+    </div>
+    <div class="card" routerLink="/dashboard">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <span>Claim Tracking</span>
+    </div>
+    <div class="card" routerLink="/users">
+      <i class="fa-solid fa-users"></i>
+      <span>User Control</span>
+    </div>
+  </div>
+</section>

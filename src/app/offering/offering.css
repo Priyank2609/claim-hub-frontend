@@ -1,0 +1,129 @@
+/* ================= INSURANCE OFFERS ================= */
+.insurance-offers {
+  padding: 100px 60px;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.offers-container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+/* Section Logo */
+.section-logo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-logo .logo-icon {
+  font-size: 48px;
+  color: #0ea5e9;
+  background: linear-gradient(135deg, #0ea5e9, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-logo .logo-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(14, 165, 233, 0.6);
+}
+
+.section-tag {
+  background: rgba(14,165,233,0.15);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #e5e7eb;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #cbd5f5;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* Individual Card */
+.offer-card {
+  background: linear-gradient(135deg, #111827, #1e293b);
+  padding: 30px 20px;
+  border-radius: 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(14,165,233,0.4);
+}
+
+/* Icons */
+.offer-icon {
+  font-size: 40px;
+  color: #0ea5e9;
+  margin-bottom: 18px;
+}
+
+/* Titles */
+.offer-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #e5e7eb;
+}
+
+/* Description */
+.offer-card p {
+  font-size: 15px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1200px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+  }
+}

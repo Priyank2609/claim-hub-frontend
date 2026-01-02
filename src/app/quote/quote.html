@@ -1,0 +1,47 @@
+<div class="quote-container">
+  <div class="quote-card">
+
+    <div class="quote-header">
+      <i class="fa-solid fa-message quote-icon"></i>
+      <h2>Request a Quote</h2>
+      <p>Tell us what you need and we’ll get back to you</p>
+    </div>
+
+    <form #quoteForm="ngForm" (ngSubmit)="onCreate(quoteForm)" novalidate>
+
+      <div class="form-group">
+        <label>Type</label>
+        <select name="policyType" ngModel required #policyType="ngModel">
+          <option value="">Select Insurance Type</option>
+          <option value="Life">Life Insurance</option>
+          <option value="Health">Health Insurance</option>
+          <option value="Vehicle">Vehicle Insurance</option>
+          <option value="Home">Home Insurance</option>
+          <option value="Travel">Travel Insurance</option>
+          <option value="Business">Business Insurance</option>
+        </select>
+
+        <div class="error-message" *ngIf="policyType.invalid && policyType.touched">
+          Please select an insurance type.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" ngModel required rows="4" placeholder="Describe your requirement..."
+          #messageField="ngModel"></textarea>
+
+        <div class="error-message" *ngIf="messageField.invalid && messageField.touched">
+          Please enter your message.
+        </div>
+      </div>
+
+
+      <button type="submit" class="quote-btn" [disabled]="quoteForm.invalid">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</div>

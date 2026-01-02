@@ -1,0 +1,32 @@
+<section class="trends-page">
+
+
+  <div class="trends-hero">
+    <h1>Insurance Trends to Watch in 2026</h1>
+    <p>Explore what’s shaping the future of insurance — technology advancements, customer expectations, market shifts,
+      and industry innovations.</p>
+  </div>
+
+
+  <div class="trends-grid">
+    <div class="trend-card" *ngFor="let trend of trendsList; let idx = index">
+      <span>{{ idx + 1 }}</span>
+      <h3>{{ trend.title }}</h3>
+      <p>{{ trend.description }}</p>
+    </div>
+  </div>
+
+  <div class="common-insights">
+    <h2>Key Industry Insights</h2>
+    <ul>
+      <li *ngFor="let insight of insights">{{ insight }}</li>
+    </ul>
+  </div>
+
+  <div class="trends-cta">
+    <h2>Stay Ahead in Insurance</h2>
+    <p>Keep exploring the latest tools and expert resources to future-proof your insurance operations.</p>
+    <button routerLink="/explore-policies" class="btn-primary">Explore Policies</button>
+  </div>
+
+</section>

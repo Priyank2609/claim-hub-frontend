@@ -1,0 +1,165 @@
+/* ================= ROOT ================= */
+.all-users-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: radial-gradient(circle at top, #0a0f1a, #111827);
+  font-family: 'Inter', sans-serif;
+  color: #e5e7eb;
+}
+
+.all-users-page h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ================= USERS GRID ================= */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* ================= USER CARD ================= */
+.user-card {
+  background: linear-gradient(145deg, #1f2937, #111827);
+  padding: 28px 24px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.75);
+}
+
+/* ================= USER HEADER ================= */
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 24px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-info p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ================= USER DETAILS ================= */
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.info-item .label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.info-item .value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* ================= USER ACTIONS ================= */
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+.btn.secondary {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.btn.secondary:hover {
+  background-color: #4b5563;
+}
+
+.no-claims {
+  /* text-align: center; */
+  padding: 50px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #c7d2fe; /* soft indigo text */
+
+  background: linear-gradient(
+    145deg,
+    #020617 0%,     /* slate-950 */
+    #020617 40%,
+    #1e3a8a 100%    /* blue-900 */
+  );
+
+  border: 1px dashed rgba(99, 102, 241, 0.4); /* indigo-500 */
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  letter-spacing: 0.3px;
+}

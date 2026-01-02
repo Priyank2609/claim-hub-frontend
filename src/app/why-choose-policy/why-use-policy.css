@@ -1,0 +1,162 @@
+.policy-guide {
+  background: radial-gradient(
+    circle at top,
+    #1e40af 0%,
+    #020617 60%
+  );
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* HERO */
+.guide-hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  max-width: 820px;
+  margin: auto;
+}
+
+.guide-hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.guide-hero p {
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* STEPS */
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.step-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #020617cc
+  );
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 28px 24px 26px;
+  transition: all 0.25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+}
+
+.step-card span {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  background: #2563eb;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.step-card h3 {
+  color: #93c5fd;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+.step-card.highlight {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+}
+
+/* TIPS */
+.guide-tips {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 40px 30px;
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #020617aa
+  );
+  border-radius: 22px;
+  border: 1px solid #1e293b;
+}
+
+.guide-tips h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.guide-tips ul {
+  list-style: none;
+  padding: 0;
+  color: #cbd5f5;
+}
+
+.guide-tips li {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+/* CTA */
+.guide-cta {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background: radial-gradient(
+    circle,
+    rgba(59,130,246,0.15),
+    transparent 60%
+  );
+}
+
+.guide-cta h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.guide-cta p {
+  color: #cbd5f5;
+  margin-bottom: 26px;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .guide-hero h1 {
+    font-size: 30px;
+  }
+}
