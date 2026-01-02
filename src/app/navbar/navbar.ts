@@ -49,7 +49,7 @@ export class Navbar {
           verticalPosition: 'top',
           panelClass: 'snackbar-success'
         })
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
         this.isToggle = false;
       },
       error: (err) => {
