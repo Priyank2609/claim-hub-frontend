@@ -53,7 +53,7 @@
 /* Password Section (cards) */
 .password-settings {
   background: #1e293b;
-  padding: 25px;
+  padding: 40px;
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   transition: transform 0.2s;
@@ -66,7 +66,7 @@
   color: #94a3b8;
 }
 .password-settings input[type="password"] {
-  width: 92%;
+  width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
   border: 1px solid #374151;
@@ -74,6 +74,7 @@
   color: #e5e7eb;
   font-size: 15px;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 .password-settings input[type="password"]:focus {
   border: 1px solid #3b82f6;
@@ -139,3 +140,4 @@ section[ng-reflect-ng-if] p {
     padding: 8px 16px;
   }
 }
+
