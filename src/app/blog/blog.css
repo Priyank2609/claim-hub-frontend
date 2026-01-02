@@ -122,3 +122,80 @@
     gap: 25px;
   }
 }
+
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+  .latest-blogs {
+    padding: 60px 20px;
+  }
+
+  .blogs-header {
+    margin-bottom: 40px;
+  }
+
+  .blogs-header h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .blogs-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .blogs-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .blog-card {
+    border-radius: 16px;
+  }
+
+  .blog-img img {
+    height: 160px;
+  }
+
+  .blog-content {
+    padding: 16px 18px;
+  }
+
+  .blog-category {
+    font-size: 11px;
+  }
+
+  .blog-title {
+    font-size: 18px;
+  }
+
+  .blog-excerpt {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .blog-meta {
+    font-size: 12px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  .blogs-header h2 {
+    font-size: 24px;
+  }
+
+  .blog-img img {
+    height: 140px;
+  }
+
+  .blog-title {
+    font-size: 17px;
+  }
+
+  .blog-excerpt {
+    font-size: 13.5px;
+  }
+}
+
