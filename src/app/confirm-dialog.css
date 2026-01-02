@@ -52,3 +52,33 @@
   background: rgba(56, 189, 248, 0.22);
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
+
+@media (max-width: 768px) {
+
+  .dialog-container {
+    width: 92vw;
+    max-width: 420px;
+    min-width: unset;
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .dialog-title {
+    font-size: 16px;
+  }
+
+  .dialog-message {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .dialog-actions {
+    justify-content: center;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
