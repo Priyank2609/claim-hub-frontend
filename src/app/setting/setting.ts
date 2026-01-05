@@ -17,9 +17,9 @@ export class Setting {
   showPasswordForm: boolean = false;
   role$!: Observable<String>
   user!: Observable<any>
-  ngOnInit() {
+  ngOnInit(id: string) {
     this.role$ = this.auth.checkRole
-    this.user = this.auth.userDetail()
+    this.user = this.auth.userDetail(id)
   }
 
   onChangePassword(form: any) {
