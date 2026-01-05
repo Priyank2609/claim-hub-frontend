@@ -56,7 +56,7 @@ export class Auth {
     return this.http.get<UserDetail>(`${environment.apiUrl}users/user-detail`, { withCredentials: true }).pipe(map(res => res.user))
   }
   userDetailById(id: string): Observable<UserDetail> {
-    return this.http.get<UserDetail>(`${environment.apiUrl}users/user-by-id/${id}`, { withCredentials: true }).pipe(map(res => res.user))
+    return this.http.get<UserDetail>(`${environment.apiUrl}users/user-get/${id}`, { withCredentials: true }).pipe(map(res => res.user))
   }
   changePassword(data: any): Observable<any> {
     return this.http.patch(`${environment.apiUrl}users/change-password`, data, { withCredentials: true })
