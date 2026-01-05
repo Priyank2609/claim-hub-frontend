@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Auth } from '../service/auth';
 import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-user-detail-page',
@@ -11,13 +11,15 @@ import { RouterLink } from "@angular/router";
   styleUrl: './user-detail-page.css',
 })
 export class UserDetailPage {
-  constructor(private auth: Auth) {
+  constructor(private auth: Auth, private route: ActivatedRoute) {
 
   }
   user!: Observable<any>
 
   ngOnInit() {
-    this.user = this.auth.userDetail()
+
+    const userId = this.route.snapshot.params['id']
+    this.user = this.auth.userDetail(userId)
   }
 
 }
