@@ -19,7 +19,7 @@ export class UserDetailPage {
   ngOnInit() {
 
     const userId = this.route.snapshot.params['id']
-    this.user = this.auth.userDetail(userId)
+    this.user = this.auth.userDetailById(userId)
   }
 
 }
