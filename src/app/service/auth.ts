@@ -46,7 +46,7 @@ export class Auth {
     localStorage.removeItem("Token")
     this.loginCheck.next(false)
     console.log(this.checkToken);
-
+    this.logout()
     this.roleCheck.next('')
   }
   logout() {
