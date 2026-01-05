@@ -46,7 +46,10 @@ export class Auth {
     localStorage.removeItem("Token")
     this.loginCheck.next(false)
     console.log(this.checkToken);
-    this.logout()
+    this.logout().subscribe({
+      next: () => console.log('Logged out on server'),
+      error: () => console.log('Logout failed but client cleared')
+    });
     this.roleCheck.next('')
   }
   logout() {
