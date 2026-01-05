@@ -27,6 +27,7 @@ import { TrendPage } from './trend-page/trend-page';
 import { PrivacyPage } from './privacy-page/privacy-page';
 import { TermsPage } from './terms-page/terms-page';
 import { Support } from './support/support';
+import { PageNotFound } from './page-not-found/page-not-found';
 
 export const routes: Routes = [
   {
@@ -141,5 +142,14 @@ export const routes: Routes = [
   {
     path: 'support',
     component: Support
+  },
+
+
+
+
+
+  {
+    path: '**',
+    component: PageNotFound
   }
 ];
