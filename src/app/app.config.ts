@@ -6,6 +6,8 @@ import { provideRouterStore } from '@ngrx/router-store';
 import { provideStore } from '@ngrx/store';
 
 import { provideStoreDevtools } from "@ngrx/store-devtools"
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './interceptors/auth-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +16,9 @@ export const appConfig: ApplicationConfig = {
     provideRouterStore(),
     provideStore(),
 
-    provideStoreDevtools()
+    provideStoreDevtools(),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    )
   ]
 };
